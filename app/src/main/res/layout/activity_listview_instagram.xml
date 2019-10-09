@@ -16,7 +16,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            tools:srcCompat="@mipmap/ic_user" />
+            tools:srcCompat="@mipmap/ic_user"
+        />
 
         <TextView
             android:id="@+id/user"
