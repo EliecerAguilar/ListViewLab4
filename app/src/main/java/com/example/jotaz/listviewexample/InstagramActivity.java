@@ -1,5 +1,6 @@
 package com.example.jotaz.listviewexample;
 
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,15 +9,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import com.example.jotaz.listviewexample.InstagramListviewAdapter;
-import com.example.jotaz.listviewexample.Chat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class InstagramActivity extends AppCompatActivity {
 
     ListView listaChats;
+    MenuItem menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +23,14 @@ public class InstagramActivity extends AppCompatActivity {
         setContentView(R.layout.activity_instagram);
         this.cargar();
         this.templateListView();
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+
     }
 
 
@@ -37,10 +44,11 @@ public class InstagramActivity extends AppCompatActivity {
             }
         });
 
-    }
 
+    }
+    private List<Chat> opc1;
     private void templateListView(){
-        List<Chat> opc1 = this.GetElementsToListViewTemplate();
+        opc1 = this.GetElementsToListViewTemplate();
 
         InstagramListviewAdapter adapter = new InstagramListviewAdapter(this, opc1);
 
@@ -77,12 +85,13 @@ public class InstagramActivity extends AppCompatActivity {
     }
 
 
-
+    //private int cont=0;
     private void AgregarNuevoElemento(){
-        List<Chat> opc = new ArrayList<>();
-        opc.add(new Chat("Eliecer", "Hola como estas", "10 AM",R.drawable.ico));
-        InstagramListviewAdapter adapter = new InstagramListviewAdapter(this, opc);
+
+        opc1.add(new Chat("Eliecer_", "Hola como estas", "10 AM",R.drawable.ico));
+        InstagramListviewAdapter adapter = new InstagramListviewAdapter(this, opc1);
         listaChats.setAdapter(adapter);
+        //cont++;
     }
 
 }
