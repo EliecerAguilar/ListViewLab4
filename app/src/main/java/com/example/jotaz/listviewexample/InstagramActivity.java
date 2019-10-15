@@ -74,7 +74,7 @@ public class InstagramActivity extends AppCompatActivity {
 
     }
 
-
+    //seleccion de opcion del menu
     public boolean onOptionItemSelected(MenuItem item){
         switch (item.getItemId()){
             case R.id.newItem:
